@@ -1,8 +1,9 @@
 # WeatherWhisperer
 WeatherWhisperer is a Python application that fetches weather data from the OpenWeatherMap API and generates a creative description of the weather using OpenAI's GPT-3.5-turbo language model.
-by Arnav Jain
+<br>
+### **Submitted By:** Arnav Jain
 
-### Streamlit Web App:
+## Streamlit Web App:
 ![image](https://github.com/Fastest-Coder-First/WeatherWhisperer/assets/64888928/b7a8b0d2-c48c-4bce-9686-c27631f8c9d2)
 <br>
 ### Data Stored In JSON File:
