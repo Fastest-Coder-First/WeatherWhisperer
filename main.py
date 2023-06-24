@@ -130,12 +130,13 @@ def main(city):
     with open('data.json', 'w') as f:
         json.dump(data_to_write, f, indent=4)
 
-
+# Run the Streamlit Web Application
 if __name__ == "__main__":
     st.title('Weather Whisperer')
-    #
+    # text box to input the simulated command
     city = st.text_input("Command Line Simulator (usage: python main.py <city name>)")
     if city:
+        # print the data in the web application
         if len(city.split(' ')) < 3:
             st.write("usage: python main.py <city name>")
         elif city.split(' ')[0] != 'python' or city.split(' ')[1] != 'main.py':
