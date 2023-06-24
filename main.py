@@ -5,12 +5,12 @@ import sys
 import openai
 import streamlit as st
 
+# Define API keys for OpenWeatherMap and OpenAI
 WEATHER_API_KEY = '27ddf1b27291b0ec63e647d4f9a5dfe6'
 OPENAI_API_KEY = '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'
 
-
+# Function to get the latitude and longitude of a city
 def get_latitude_longitude(city):
-    """Fetch latitude and longitude for a given city."""
     url = 'http://api.openweathermap.org/geo/1.0/direct'
     params = {
         'q': city,
@@ -18,6 +18,7 @@ def get_latitude_longitude(city):
         'limit': 1
     }
     try:
+        # Make request to OpenWeatherMap API
         response = requests.get(url, params=params)
         response.raise_for_status()  # Raise exception if status code is not 200
         data = response.json()
@@ -29,9 +30,8 @@ def get_latitude_longitude(city):
         print("Error:", err)
         sys.exit(1)
 
-
+# Function to get the weather data of a location using the latitude and longitude of the city generated from get_latitude_longitude function
 def get_weather(lat, lon):
-    """Fetch weather data for given latitude and longitude."""
     url = 'http://api.openweathermap.org/data/2.5/forecast'
     params = {
         'lat': lat,
@@ -40,6 +40,7 @@ def get_weather(lat, lon):
         'units': 'metric'
     }
     try:
+        # Make request to OpenWeatherMap API
         response = requests.get(url, params=params)
         response.raise_for_status()  # Raise exception if status code is not 200
         data = response.json()
@@ -51,9 +52,8 @@ def get_weather(lat, lon):
         print("Error:", err)
         sys.exit(1)
 
-
+# Function to generate a creative description of the weather using GPT-3.5-turbo
 def generate_description(forecast_data):
-    """Generate a creative description of the weather using GPT-3.5-turbo."""
     openai.api_key = OPENAI_API_KEY
 
     # Create a string that describes the weather data
@@ -68,7 +68,7 @@ def generate_description(forecast_data):
                 {"role": "user", "content": forecast_data}
             ]
         )
-    # except openai.error.InvalidRequestError as err:
+    # handling all the exceptions
     except (openai.error.APIError,
             openai.error.Timeout,
             openai.error.RateLimitError,
@@ -81,10 +81,8 @@ def generate_description(forecast_data):
 
     return response
 
-
+# Main function to fetch and print weather data for a given city
 def main(city):
-    """Main function: get city name from user input, fetch and print weather data."""
-
     # Get latitude and longitude for the city
     lat, lon = get_latitude_longitude(city)
 
