@@ -43,6 +43,14 @@ The application outputs the weather data and the generated description to the St
 # Error Handling
 The application includes error handling for various types of errors that can occur during the API calls to OpenWeatherMap and OpenAI.
 
+# Architectural Flow
+The application follows a clear architectural flow for fetching and generating a creative description of the weather. Here's how it works:
+1. **Input:** The user provides a city name.
+2. **Fetching Geographic Coordinates:** The application uses the OpenWeatherMap GeoCoding API to fetch the latitude and longitude of the city specified by the user. This is done using the get_latitude_longitude(city) function.
+3. **Fetching Weather Data:** The latitude and longitude obtained in the previous step are then used to fetch the weather forecast data for that location using the OpenWeatherMap One Call API. This is achieved using the get_weather(lat, lon) function.
+4. **Generating Creative Description:** The application then generates a creative description of the weather forecast data using OpenAI's GPT-3.5-turbo model. This is done in the generate_description(forecast_data) function. The generated description is more engaging and appealing to read than the raw weather data.
+5. **Output:** The application finally presents the creatively described weather data to the user.
+
 # Usage of Github Co-Pilot:
 In the development of the WeatherWhisperer project, GitHub Copilot was utilized in several ways:
 1. **Writing Boilerplate Code:** GitHub Copilot was able to provide quick snippets of boilerplate code for common tasks such as making HTTP requests with the requests library, handling exceptions, and formatting dates with the datetime library.
