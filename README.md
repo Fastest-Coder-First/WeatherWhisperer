@@ -5,13 +5,13 @@ Well for the description, WeatherWhisperer is a Python application that fetches 
 
 ## Streamlit Web App:
 
-![web-app](https://github.com/Fastest-Coder-First/WeatherWhisperer/assets/64888928/47382af7-4fac-488a-ac98-7875a9725f29)
+![web-app](https://github.com/Fastest-Coder-First/WeatherWhisperer/blob/main/web-app.png)
 
 <br>
 
 ## Data Stored In JSON File:
 
-![jsooon](https://github.com/Fastest-Coder-First/WeatherWhisperer/assets/64888928/9f9181b1-10d1-4a84-86c6-c0d96e056bf7)
+![json-file](https://github.com/Fastest-Coder-First/WeatherWhisperer/blob/main/json-file.png)
 
 # Install Dependencies:
 To install the libraries required for this project use this command:
