@@ -7,7 +7,7 @@ import streamlit as st
 
 # Define API keys for OpenWeatherMap and OpenAI
 WEATHER_API_KEY = '27ddf1b27291b0ec63e647d4f9a5dfe6'
-OPENAI_API_KEY = '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'
+OPENAI_API_KEY = 'YOUR_OPENAI_API_KEY'
 
 # Function to get the latitude and longitude of a city
 def get_latitude_longitude(city):
